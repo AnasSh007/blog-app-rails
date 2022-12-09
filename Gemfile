@@ -70,3 +70,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "redis"
+gem "redis-rb"
+gem "redis-namespace"
+
+gem "devise"

@@ -1,9 +1,25 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :articles
   root "articles#index"
-  # get "/articles", to: "articles#index"
-  # get "/articles/:id", to: "articles#show"
-  resources :articles do
-    resources :comments
-  end
+
+#   resources :articles do
+#     member do
+#       get "routing1", to: "routing1"
+#     end
+#     resources :comments
+#   end
+# end
+
+# resources :articles do
+#   get "routing1", on: :member
+#   resources :comments
+# end
+# end
+  devise_for :articles
+#
+
+resources :articles do
+  get "routing1", on: :collection
+  resources :comments, shallow: :true
+end
 end

@@ -45,6 +45,17 @@ class ArticlesController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  # def destroyall
+  #   puts "=========================== delete ==========================="
+  #   @article = Article.find(params[:id])
+  #   @article.destroy
+  #
+  #   redirect_to root_path, status: :see_other
+  # end
+  def routing1
+    puts "hello routing 1"
+  end
+
   private
   def article_params
     params.require(:article).permit(:title, :body, :status)
